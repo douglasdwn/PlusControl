@@ -1,0 +1,17 @@
+{
+  "name": "Mobills",
+  "version": "1.0.0",
+  "description": "Documentação API Mobills",
+  "title": "API Mobills",
+  "url" : "http://localhost:5000/api/v1",
+  "sampleUrl" : "http://localhost:5000/api/v1",
+  
+  "order": [
+    "GetUser",
+    "PostUser"
+  ],
+  "template": {
+  	"withCompare": true,
+  	"withGenerator": true
+  }
+}
