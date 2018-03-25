@@ -3,10 +3,12 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 //var gulpSequence = require('gulp-sequence');
 var nodemon = require('gulp-nodemon');
+var apidoc = require('gulp-apidoc');
+var shell = require('gulp-shell');
 
 gulp.task('default', ['browser-sync'], function() {
 
-})
+});
 
 gulp.task('browser-sync', ['nodemon'],function() {
 	browserSync.init(null, {
@@ -33,3 +35,25 @@ gulp.task('nodemon', function (cb) {
 		} 
 	});
 });
+
+ 
+gulp.task('apidoc', ['pastaApidoc'],function(done){
+	apidoc({
+			src: "src/",
+			dest: "public/apidoc/",
+			//template: "template/",
+			debug: true,
+			//includeFilters: [ ".*\\.js$" ]
+	},done);
+});
+
+
+
+ 
+gulp.task('pastaApidoc', function () {
+  return gulp.src('*.js', {read: false})
+  .pipe(shell([
+    'rd public\\apidoc mkdir public\\apidoc'
+	]))
+})
+
