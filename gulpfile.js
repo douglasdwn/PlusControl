@@ -37,7 +37,7 @@ gulp.task('nodemon', function (cb) {
 });
 
  
-gulp.task('apidoc', ['pastaApidoc'],function(done){
+gulp.task('apidoc',function(done){
 	apidoc({
 			src: "src/",
 			dest: "public/apidoc/",

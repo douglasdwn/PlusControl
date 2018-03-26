@@ -1,8 +1,8 @@
 {
-  "name": "Mobills",
-  "version": "1.0.0",
-  "description": "Documentação API Mobills",
-  "title": "API Mobills",
+  "name": "Plus Control",
+  "version": "0.1.0",
+  "description": "Documentação API Plus Control",
+  "title": "API Plus Control",
   "url" : "http://localhost:5000/api/v1",
   "sampleUrl" : "http://localhost:5000/api/v1",
   
