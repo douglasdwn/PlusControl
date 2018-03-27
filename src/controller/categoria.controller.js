@@ -31,6 +31,7 @@ function create(req, res, next) {
     descricao: req.body.descricao,
     // Toda categoria fica ativa como padrão
     //ativo: req.body.ativo,
+    tipo: req.body.tipo,
     cor: req.body.cor
   });
 
@@ -49,7 +50,8 @@ function create(req, res, next) {
 function update(req, res, next) {
   const categoria = req.categoria;
   categoria.descricao = req.body.descricao;
-  categoria.ativo = req.body.ativo;
+  //Altera somente para desativado (exclui), não atualiza
+  //categoria.ativo = req.body.ativo;
   categoria.cor = req.body.cor;
 
   categoria.save()

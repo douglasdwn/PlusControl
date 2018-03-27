@@ -25,6 +25,11 @@ const CategoriaSchema = new Schema({
       type: String,
       required: true
     },
+    tipo: {
+      type: String,
+      required: true,
+      enum: ['d', 'r']
+    },
     ativo: {
       type: String,
       required: true,
