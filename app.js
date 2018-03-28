@@ -14,7 +14,10 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 //Set up default mongoose connection
-var mongoDB = 'mongodb://127.0.0.1/mobills';
+//var mongoDB = 'mongodb://127.0.0.1/mobills';
+
+//mLab conexão
+var mongoDB = 'mongodb://douglas:william@ds125195.mlab.com:25195/plus-control-api'
 mongoose.connect(mongoDB);
 // Get Mongoose to use the global promise library
 mongoose.Promise = global.Promise;
