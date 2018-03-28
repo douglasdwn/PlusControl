@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-//var CategoriaController = require('../controller/categoriaController');
-
 const CategoriaRoute = require('./categoria.route');
+const ContaRoute = require('./conta.route');
+const TituloRoute = require('./titulo.route');
 
 
-router.use('/categoria', CategoriaRoute);
+router.use('/categorias', CategoriaRoute);
+router.use('/contas', CategoriaRoute);
+router.use('/titulos', TituloRoute);
 
 
 module.exports = router;
