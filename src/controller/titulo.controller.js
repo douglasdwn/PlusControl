@@ -29,11 +29,11 @@ function get(req, res) {
 function create(req, res, next) {
   const titulo = new Titulo({
     descricao: req.body.descricao,
-    // Toda titulo fica ativa como padrão
+    //Altera somente para desativado (exclui), não atualiza
     //ativo: req.body.ativo,
-    tipo: req.body.tipo,
-    cor: req.body.cor,
-    categoria: req.body.categoria
+    total_parcela: req.body.total_parcela,
+    emissao: req.body.emissao,
+    valor: req.body.valor,
   });
 
   titulo.save()
@@ -54,7 +54,9 @@ function update(req, res, next) {
   titulo.descricao = req.body.descricao;
   //Altera somente para desativado (exclui), não atualiza
   //titulo.ativo = req.body.ativo;
-  titulo.cor = req.body.cor;
+  titulo.total_parcela = req.body.total_parcela;
+  titulo.emissao = req.body.emissao;
+  titulo.valor = req.body.valor;
 
   titulo.save()
     .then(savedTitulo => res.json(savedTitulo))

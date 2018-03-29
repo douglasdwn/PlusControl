@@ -6,22 +6,12 @@ const Schema = mongoose.Schema;
 /**
  * User Schema
  */
-const TituloSchema = new Schema({
-    descricao: {
-      type: String,
+const ParcelaSchema = new Schema({
+    parcela: {
+      type: Number,
       required: true
     },
-    total_parcela: {
-      type: Number,
-      required: true,
-      default: 1
-    },
-    tipo: {
-      type: String,
-      required: true,
-      enum: ['d','r']
-    },
-    emissao: {
+    vencimento: {
       type: Date,
       required: true
     },
@@ -29,12 +19,24 @@ const TituloSchema = new Schema({
       type: Number,
       required: true
     },
+    titulo : { 
+      type: Schema.Types.ObjectId, 
+      ref: 'Titulo' } ,
+    saldo: {
+      type: Number,
+      required: true,
+      default: 0
+    },
     ativo: {
       type: String,
       required: true,
       enum: ['s','n'],
       default: 's'
     },
+    cor: {
+      type: String,
+      default: 'preto'
+    }
   },
   {
     timestamps: {
@@ -53,13 +55,13 @@ const TituloSchema = new Schema({
 /**
  * Methods
  */
-TituloSchema.method({
+ParcelaSchema.method({
 });
 
 /**
  * Statics
  */
-TituloSchema.statics = {
+ParcelaSchema.statics = {
   /**
    * Get titulo
    * @param {ObjectId} id - O objectId do titulo.
@@ -95,4 +97,4 @@ TituloSchema.statics = {
 /**
  * @typedef Titulo
  */
-module.exports = mongoose.model('Titulo', TituloSchema);
+module.exports = mongoose.model('Titulo', ParcelaSchema);
