@@ -11,15 +11,10 @@ const TituloSchema = new Schema({
       type: String,
       required: true
     },
-    total_parcela: {
+    total_parcelas: {
       type: Number,
       required: true,
       default: 1
-    },
-    tipo: {
-      type: String,
-      required: true,
-      enum: ['d','r']
     },
     emissao: {
       type: Date,
@@ -35,6 +30,10 @@ const TituloSchema = new Schema({
       enum: ['s','n'],
       default: 's'
     },
+    categoria: {
+      type: Schema.Types.ObjectId,
+      ref: 'Categoria'
+    }
   },
   {
     timestamps: {

@@ -32,8 +32,9 @@ function create(req, res, next) {
     //Altera somente para desativado (exclui), não atualiza
     //ativo: req.body.ativo,
     total_parcela: req.body.total_parcela,
+    categoria: req.body.categoria,
     emissao: req.body.emissao,
-    valor: req.body.valor,
+    valor: req.body.valor
   });
 
   titulo.save()
@@ -54,7 +55,8 @@ function update(req, res, next) {
   titulo.descricao = req.body.descricao;
   //Altera somente para desativado (exclui), não atualiza
   //titulo.ativo = req.body.ativo;
-  titulo.total_parcela = req.body.total_parcela;
+  titulo.total_parcelas = req.body.total_parcelas;
+  titulo.categoria = req.body.categoria;
   titulo.emissao = req.body.emissao;
   titulo.valor = req.body.valor;
 
